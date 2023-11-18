@@ -19,7 +19,7 @@ def multipleLinearRegression():
     # First value is always '1' to include a constant term or intersect.
     xs = [[1,1,1,1], [1,2,1,1], [1,1,2,1], [1,1,1,2], [1,2,2,1], [1,2,1,2], [1,1,2,2], [1,2,2,2], [1,3,2,2], [1,2,3,2], [1,2,2,3]]
 
-    # Build one y with a bif of noise.
+    # Build one column of y values with a bif of noise.
     random.seed()
     ys = []
     for x in xs:
