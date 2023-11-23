@@ -15,7 +15,7 @@ import random
 
 def multipleLinearRegression():
     ''' Execute a multiple linear regression. '''
-
+    print('Multiple Linear Regression')
     # First value is always '1' to include a constant term or intersect.
     xs = [[1,1,1,1], [1,2,1,1], [1,1,2,1], [1,1,1,2], [1,2,2,1], [1,2,1,2], [1,1,2,2], [1,2,2,2], [1,3,2,2], [1,2,3,2], [1,2,2,3]]
 
@@ -41,5 +41,33 @@ def multipleLinearRegression():
 
 
 
+def nonIndependentX():
+    ''' Use multiple linear regression to fit for powers of a single X. '''
+    print('Multiple Powers of X')
+    xs = []
+    ys = []
+    for x in range(1, 10):
+        point = [1]
+        point.append(x ** -1)
+        point.append(x ** 2)
+        xs.append(point)
+
+        y = 10 + x ** -1  + 2 * x ** 2 + random.random()
+        ys.append(y)
+
+    # Fit a multiple linear regression.
+    p, residuals, rank, s = numpy.linalg.lstsq(xs, ys, rcond=None)
+
+    # This is the fit coefficients.
+    print(f'coefficients = {p}')
+
+    # Show the resulting model.
+    for x in range(1, 10):
+        calculatedValue = p[0] + p[1] * x ** -1 + p[2] * x ** 2
+        print(f'{x} => {calculatedValue:,.1f}  ({10 + x ** -1  + 2 * x ** 2:,.0f})')
+
+
+
 if __name__ == '__main__':
     multipleLinearRegression()
+    nonIndependentX()
