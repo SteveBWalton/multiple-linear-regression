@@ -49,10 +49,10 @@ def nonIndependentX():
     for x in range(1, 10):
         point = [1]
         point.append(x ** -1)
-        point.append(x ** 2)
+        point.append(x ** 3)
         xs.append(point)
 
-        y = 10 + x ** -1  + 2 * x ** 2 + random.random()
+        y = 10 + x ** -1  + 2 * x ** 3 + random.random()
         ys.append(y)
 
     # Fit a multiple linear regression.
@@ -64,7 +64,7 @@ def nonIndependentX():
     # Show the resulting model.
     for x in range(1, 10):
         calculatedValue = p[0] + p[1] * x ** -1 + p[2] * x ** 2
-        print(f'{x} => {calculatedValue:,.1f}  ({10 + x ** -1  + 2 * x ** 2:,.0f})')
+        print(f'{x} => {calculatedValue:,.1f}  ({10 + x ** -1  + 2 * x ** 3:,.0f})')
 
 
 
