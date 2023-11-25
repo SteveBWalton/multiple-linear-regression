@@ -63,7 +63,7 @@ def nonIndependentX():
 
     # Show the resulting model.
     for x in range(1, 10):
-        calculatedValue = p[0] + p[1] * x ** -1 + p[2] * x ** 2
+        calculatedValue = p[0] + p[1] * x ** -1 + p[2] * x ** 3
         print(f'{x} => {calculatedValue:,.1f}  ({10 + x ** -1  + 2 * x ** 3:,.0f})')
 
 
