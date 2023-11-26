@@ -34,10 +34,10 @@ def multipleLinearRegression():
     print(f'coefficients = {p}')
 
     # Show the resulting model.
-    print(f'(0,0,0) => {p[0]:,.1f}  (10) ')
+    print(f'(0, 0, 0) => {p[0]:,.1f}  (10) ')
     for x in xs:
         calculatedValue = p[0] + p[1] * x[1] + p[2] * x[2] + p[3] * x[3]
-        print(f'({x[1]},{x[2]},{x[3]}) => {calculatedValue:,.1f}  ({10 + x[1] + 2*x[2] + 3*x[3]:,.0f})')
+        print(f'({x[1]}, {x[2]}, {x[3]}) => {calculatedValue:,.1f}  ({10 + x[1] + 2*x[2] + 3*x[3]:,.0f})')
 
 
 
@@ -47,10 +47,10 @@ def nonIndependentX():
     xs = []
     ys = []
     for x in range(1, 10):
-        point = [1]
-        point.append(x ** -1)
-        point.append(x ** 3)
-        xs.append(point)
+        x = [1]
+        x.append(x ** -1)
+        x.append(x ** 3)
+        xs.append(x)
 
         y = 10 + x ** -1  + 2 * x ** 3 + random.random()
         ys.append(y)
