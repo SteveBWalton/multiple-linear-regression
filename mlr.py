@@ -47,10 +47,10 @@ def nonIndependentX():
     xs = []
     ys = []
     for x in range(1, 10):
-        x = [1]
-        x.append(x ** -1)
-        x.append(x ** 3)
-        xs.append(x)
+        xPoint = [1]
+        xPoint.append(x ** -1)
+        xPoint.append(x ** 3)
+        xs.append(xPoint)
 
         y = 10 + x ** -1  + 2 * x ** 3 + random.random()
         ys.append(y)
